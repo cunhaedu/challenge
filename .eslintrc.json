@@ -19,6 +19,8 @@
       "no-new": "off",
       "import/extensions": "off",
       "max-len": "off",
+      "camelcase": "off",
+      "class-methods-use-this": 0,
       "no-prototype-builtins": "off",
       "no-restricted-syntax": "off",
       "max-classes-per-file": "off",
@@ -36,7 +38,7 @@
     "settings": {
       "import/resolver": {
         "node": {
-          "extensions": [".js", ".jsx", ".ts", ".tsx", ".spec.ts"]
+          "extensions": [".js", ".jsx", ".ts", ".tsx"]
         }
       }
     }
