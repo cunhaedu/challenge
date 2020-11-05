@@ -6,6 +6,14 @@ export default async (name = 'default'): Promise<Connection> => {
   return createConnection(
     Object.assign(defaultOptions, {
       name,
+      entities:
+        process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test'
+          ? ['./src/entities/*.ts']
+          : ['./dist/entities/*.js'],
+      migrations:
+        process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test'
+          ? ['./src/entities/*.ts']
+          : ['./dist/entities/*.js'],
       database:
         process.env.NODE_ENV === 'test'
           ? process.env.POSTGRES_DATABASE_TEST

@@ -1,4 +1,4 @@
-import Company from '@models/Company';
+import Company from '@entities/Company';
 import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
 

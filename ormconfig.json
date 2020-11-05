@@ -9,7 +9,7 @@
     "./src/typeorm/migrations/*.ts"
   ],
   "entities": [
-    "src/models/*.ts"
+    "./src/entities/*.ts"
   ],
   "cli": {
     "migrationsDir": "./src/typeorm/migrations"

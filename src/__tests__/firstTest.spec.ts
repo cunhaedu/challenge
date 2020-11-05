@@ -1,4 +1,4 @@
-import Companies from '@models/Company';
+import Companies from '@entities/Company';
 
 test('it should be ok', () => {
   const companies = new Companies();
