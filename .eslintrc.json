@@ -17,9 +17,8 @@
     ],
     "rules": {
       "no-new": "off",
-      "import/extensions": ["ignorePackages"],
-      "commonjs": true,
-      "amd": true,
+      "import/extensions": "off",
+      "max-len": "off",
       "no-prototype-builtins": "off",
       "no-restricted-syntax": "off",
       "max-classes-per-file": "off",
@@ -37,7 +36,7 @@
     "settings": {
       "import/resolver": {
         "node": {
-          "extensions": [".js", ".jsx", ".ts", ".tsx"]
+          "extensions": [".js", ".jsx", ".ts", ".tsx", ".spec.ts"]
         }
       }
     }
