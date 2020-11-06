@@ -21,7 +21,7 @@
       "camelcase": "off",
       "no-unused-vars" : "off",
       "import/no-unresolved": "off",
-      "import/extensions": ["never"],
+      "import/extensions": 0,
       "class-methods-use-this": 0,
       "no-prototype-builtins": "off",
       "no-restricted-syntax": "off",
