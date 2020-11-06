@@ -44,11 +44,13 @@ export default class CompaniesController {
 
     const companiesRepository = getRepository(Company);
 
-    const findCompanyWithSameEmail = await companiesRepository.find({
-      where: { contact_email },
+    const findCompanyWithSameEmail = await companiesRepository.findOne({
+      where: {
+        contact_email,
+      },
     });
 
-    if (findCompanyWithSameEmail.length !== 0) {
+    if (findCompanyWithSameEmail) {
       return res.status(400).json({ message: 'Theres already a company registered with that email. Please, try it again with another email.' });
     }
 
@@ -97,9 +99,9 @@ export default class CompaniesController {
 
     const companiesRepository = getRepository(Company);
 
-    const findCompanyWithSameEmail = await companiesRepository.findOne(id);
+    const findCompanyById = await companiesRepository.findOne(id);
 
-    if (!findCompanyWithSameEmail) {
+    if (!findCompanyById) {
       return res.status(400).json({ message: 'cannot find any company with that id.' });
     }
 

@@ -24,9 +24,9 @@ export default class Product {
   @Column('decimal', { precision: 11, scale: 2 })
   large_size_base: string;
 
-  @CreateDateColumn()
+  @CreateDateColumn({ type: 'timestamp' })
   created_at: Date;
 
-  @UpdateDateColumn()
+  @UpdateDateColumn({ type: 'timestamp' })
   updated_at: Date;
 }
