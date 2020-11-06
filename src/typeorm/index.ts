@@ -6,6 +6,10 @@ export default async (name = 'default'): Promise<Connection> => {
   return createConnection(
     Object.assign(defaultOptions, {
       name,
+      host: process.env.POSTGRES_HOST,
+      port: process.env.POSTGRES_PORT,
+      username: process.env.POSTGRES_USER,
+      password: process.env.POSTGRES_PASSWORD,
       entities:
         process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test'
           ? defaultOptions.entities
@@ -17,7 +21,7 @@ export default async (name = 'default'): Promise<Connection> => {
       database:
         process.env.NODE_ENV === 'test'
           ? process.env.POSTGRES_DATABASE_TEST
-          : defaultOptions.database,
+          : process.env.POSTGRES_DATABASE,
     }),
   );
 };
