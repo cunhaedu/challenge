@@ -8,11 +8,11 @@ export default async (name = 'default'): Promise<Connection> => {
       name,
       entities:
         process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test'
-          ? ['./src/entities/*.ts']
+          ? defaultOptions.entities
           : ['./dist/entities/*.js'],
       migrations:
         process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test'
-          ? ['./src/entities/*.ts']
+          ? defaultOptions.migrations
           : ['./dist/entities/*.js'],
       database:
         process.env.NODE_ENV === 'test'
