@@ -2,6 +2,8 @@ import Product from '@entities/Product';
 import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
 
+import productValidator from '../validators/ProductValidator';
+
 export default class CompaniesController {
   public async index(req: Request, res: Response) {
     const productsRepository = getRepository(Product);
@@ -51,6 +53,10 @@ export default class CompaniesController {
       large_size_base,
     };
 
+    await productValidator.validate(data, {
+      abortEarly: false,
+    });
+
     const product = productRepository.create(data);
 
     await productRepository.save(product);
@@ -92,6 +98,10 @@ export default class CompaniesController {
       large_size_base,
       updated_at: new Date(),
     };
+
+    await productValidator.validate(data, {
+      abortEarly: false,
+    });
 
     await productRepository.update(id, data);
 

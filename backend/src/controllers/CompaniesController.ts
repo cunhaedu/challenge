@@ -2,6 +2,8 @@ import Company from '@entities/Company';
 import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
 
+import companyValidator from '../validators/CompanyValidator';
+
 export default class CompaniesController {
   public async index(req: Request, res: Response) {
     const companiesRepository = getRepository(Company);
@@ -71,6 +73,10 @@ export default class CompaniesController {
       address,
     };
 
+    await companyValidator.validate(data, {
+      abortEarly: false,
+    });
+
     const company = companiesRepository.create(data);
 
     await companiesRepository.save(company);
@@ -121,6 +127,10 @@ export default class CompaniesController {
       commercial_phone,
       address,
     };
+
+    await companyValidator.validate(data, {
+      abortEarly: false,
+    });
 
     await companiesRepository.update(id, data);
 
