@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*, input, button {
+  font-family: Arial, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  background-color: #E5E5E5;
+}
+
+main {
+  margin-left: 15vw;
+  padding: 10px;
+}
+
+@media (min-width: 600px) {
+  main {
+    margin-left: 10vw;
+  }
+}
