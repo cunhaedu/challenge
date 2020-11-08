@@ -1,4 +1,3 @@
-import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IProduct } from 'src/app/components/product/Product.model';
@@ -21,7 +20,6 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     this.productService.getAllProducts().subscribe(products => {
       this.products = products;
-      console.log(products);
     })
   }
 

@@ -1,3 +1,38 @@
 <main>
-  <h1>Testando funcionamento da Home</h1>
+  <h1>Gerenciar clientes</h1>
+
+  <div class="company__btn">
+    <button (click)="handleNavigateToCreateCompany()" class="btn__add">
+      <img src="../../../assets/plus.png" alt="adicionar">
+      Cadastrar novo cliente
+    </button>
+
+    <div class="companies">
+        <ul>
+          <li>
+            <span>Nome do cliente</span>
+            <span>CNPJ</span>
+            <span>Porte</span>
+            <span>QTD de funcionários</span>
+            <span>Telefone(Com)</span>
+          </li>
+          <li *ngFor="let company of companies">
+            <span>{{ company.fantasy_name }}</span>
+            <span>{{ company.cnpj }}</span>
+            <span>{{ company.company_size }}</span>
+            <span>{{ company.number_of_employees }}</span>
+            <span>{{ company.commercial_phone }}</span>
+            <a routerLink="/company/update/{{ company.id }}">
+              <img src="../../../assets/budget.png" alt="editIcon">
+            </a>
+            <a routerLink="/company/update/{{ company.id }}">
+              <img src="../../../assets/edit.png" alt="editIcon">
+            </a>
+            <button (click)="handleDeleteCompany(company)">
+              <img src="../../../assets/delete.png" alt="deleteIcon">
+            </button>
+          </li>
+      </ul>
+    </div>
+  </div>
 </main>
