@@ -1,3 +1,11 @@
-<app-header></app-header>
-<app-side-bar></app-side-bar>
-<router-outlet></router-outlet>
+<nb-layout>
+
+  <nb-layout-header fixed>
+    <app-header></app-header>
+  </nb-layout-header>
+  
+  <nb-layout-column>
+    <app-side-bar></app-side-bar>
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+</nb-layout>

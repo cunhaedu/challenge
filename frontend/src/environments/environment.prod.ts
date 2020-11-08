@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  FRONTEND_BASE_URL: 'http://localhost:3333'
 };

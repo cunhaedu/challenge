@@ -1,0 +1,56 @@
+<main>
+  <div id="page-update-product">
+    <form class="form" (ngSubmit)="handleUpdateProduct()" >
+      <h1>Cadastrar Produto</h1>
+
+      <div class="form__field">
+        <label htmlFor="name">Nome do produto</label><br>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          [(ngModel)]="product.name"
+        />
+      </div>
+
+      <fieldset>
+        <legend>
+          <h2>Preços</h2>
+          <span>Informe a variação de preço do produto<br />de acordo com o porte da empresa</span>
+        </legend>
+      </fieldset>
+
+      <div class="form__field">
+        <label htmlFor="little-size-base">Empresa de pequeno porte</label>
+        <input
+          type="number"
+          name="little-size-base"
+          id="little-size-base"
+          [(ngModel)]="product.little_size_base"
+        >
+      </div>
+
+      <div class="form__field">
+        <label htmlFor="middle-size-base">Empresa de médio porte</label>
+        <input
+          type="number"
+          name="middle-size-base"
+          id="middle-size-base"
+          [(ngModel)]="product.middle_size_base"
+        >
+      </div>
+
+      <div class="form__field">
+        <label htmlFor="large-size-base">Empresa de grande porte</label>
+        <input
+          type="number"
+          name="large-size-base"
+          id="large-size-base"
+          [(ngModel)]="product.large_size_base"
+        >
+      </div>
+
+      <button type="submit">Atualizar produto</button>
+    </form>
+  </div>
+</main>

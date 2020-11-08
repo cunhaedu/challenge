@@ -1,3 +1,33 @@
 <main>
-  <h1>Testando funcionamento dos produtos</h1>
+  <h1>Gerenciar produtos</h1>
+
+  <div class="product__btn">
+    <button (click)="handleNavigateToCreateProduct()" class="btn__add">
+      <img src="../../../assets/plus.png" alt="adicionar">
+      Cadastrar novo produto
+    </button>
+
+    <div class="products">
+        <ul>
+          <li>
+            <span>Produto</span>
+            <span>Base - Pequeno porte</span>
+            <span>Base - Médio porte</span>
+            <span>Base - Grande porte</span>
+          </li>
+          <li *ngFor="let product of products">
+            <span>{{ product.name }}</span>
+            <span>{{ product.little_size_base | currency }}</span>
+            <span>{{ product.middle_size_base | currency }}</span>
+            <span>{{ product.large_size_base | currency }}</span>
+            <a routerLink="/products/update/{{ product.id }}">
+              <img src="../../../assets/edit.png" alt="editIcon">
+            </a>
+            <button (click)="handleDeleteProduct(product)">
+              <img src="../../../assets/delete.png" alt="deleteIcon">
+            </button>
+          </li>
+      </ul>
+    </div>
+  </div>
 </main>

@@ -1,0 +1,100 @@
+h1 {
+  text-align: center;
+}
+
+.product__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  margin: 50px auto;
+}
+
+.product__btn button.btn__add {
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  width: 100%;
+  height: 50px;
+  padding: 20px;
+
+  color: #FFF;
+  text-align: center;
+
+  background: #3949AB;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.product__btn button.btn__add:hover {
+  background: #24328a;
+}
+
+.products {
+  margin-top: 30px;
+  width: 100%;
+
+  background: #FFF;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.products ul li {
+  list-style-type: none;
+
+  display: grid;
+  grid-template-columns: 60% none none none 20% 20%;
+  min-height: 56px;
+
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 16px;
+  margin: 5px auto;
+}
+
+.products ul li:first-child {
+  font-weight: bold;
+}
+
+.products ul li span {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.products ul li button,
+.products ul li a {
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+.products ul li button img,
+.products ul li a img {
+  width: 24px;
+  height: 24px;
+  opacity: 0.6;
+}
+
+.products ul li button img:hover,
+.products ul li a img:hover {
+  opacity: 1;
+}
+
+@media (min-width: 600px) {
+  .product__btn button.btn__add {
+    width: 250px;
+  }
+
+  .products ul li {
+    grid-template-columns: 45% 15% 15% 15% 5% 5%;
+  }
+}

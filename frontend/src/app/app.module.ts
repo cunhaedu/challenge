@@ -7,6 +7,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { HomeComponent } from './views/home/home.component';
 import { ProductsComponent } from './views/products/products.component';
+import { CreateProductComponent } from './components/product/create-product/create-product.component';
+import { FormsModule } from '@angular/forms'
+
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { UpdateProductComponent } from './components/product/update-product/update-product.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +22,19 @@ import { ProductsComponent } from './views/products/products.component';
     HeaderComponent,
     SideBarComponent,
     HomeComponent,
-    ProductsComponent
+    ProductsComponent,
+    CreateProductComponent,
+    UpdateProductComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    NbThemeModule.forRoot({ name: 'default' }),
+    NbLayoutModule,
+    NbEvaIconsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

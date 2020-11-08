@@ -33,9 +33,9 @@
   opacity: 1
 }
 
-@media (min-width: 500px) {
+@media (min-width: 600px) {
   .menu {
-    width: 15vw;
+    width: 10vw;
     height: calc(100vh - 70px);
 
     display: flex;
@@ -50,11 +50,5 @@
 
     max-height: 100vh;
     overflow-y: hidden;
-  }
-}
-
-@media (min-width: 600px) {
-  .menu {
-    width: 10vw;
   }
 }
