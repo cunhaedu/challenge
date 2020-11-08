@@ -4,7 +4,7 @@ export class createTableCompanies1604590782506 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.query('CREATE EXTENSION IF NOT EXISTS "uuid-ossp"');
     await queryRunner.createTable(new Table({
-      name: 'companies',
+      name: 'clients',
       columns: [
         {
           name: 'id',
@@ -34,7 +34,7 @@ export class createTableCompanies1604590782506 implements MigrationInterface {
           isNullable: false,
         },
         {
-          name: 'company_size',
+          name: 'size',
           type: 'varchar',
           isNullable: false,
         },
@@ -98,6 +98,6 @@ export class createTableCompanies1604590782506 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('companies');
+    await queryRunner.dropTable('clients');
   }
 }

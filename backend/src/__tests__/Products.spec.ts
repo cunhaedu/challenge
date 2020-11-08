@@ -11,7 +11,7 @@ describe('Products', () => {
   beforeAll(async () => {
     connection = await createConnection('test-connection');
 
-    await connection.query('DROP TABLE IF EXISTS companies');
+    await connection.query('DROP TABLE IF EXISTS clients');
     await connection.query('DROP TABLE IF EXISTS products');
     await connection.query('DROP TABLE IF EXISTS migrations');
 
@@ -19,7 +19,7 @@ describe('Products', () => {
   });
 
   beforeEach(async () => {
-    await connection.query('DELETE FROM companies');
+    await connection.query('DELETE FROM clients');
     await connection.query('DELETE FROM products');
   });
 

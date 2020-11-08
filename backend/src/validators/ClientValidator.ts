@@ -1,11 +1,11 @@
 import * as Yup from 'yup';
 
-const createCompanyValidator = Yup.object().shape({
+const createClientValidator = Yup.object().shape({
   name: Yup.string().required(),
   fantasy_name: Yup.string().required(),
   cnpj: Yup.string().required(),
   neighborhood: Yup.string().required(),
-  company_size: Yup.string().required(),
+  size: Yup.string().required(),
   contact_email: Yup.string().required().email(),
   email: Yup.string().required().email(),
   cep: Yup.string().required(),
@@ -17,4 +17,4 @@ const createCompanyValidator = Yup.object().shape({
   address: Yup.string().required(),
 });
 
-export default createCompanyValidator;
+export default createClientValidator;

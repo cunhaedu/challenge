@@ -6,8 +6,8 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
-@Entity('companies')
-export default class Company {
+@Entity('clients')
+export default class Client {
   @Column('uuid')
   @PrimaryGeneratedColumn('uuid')
   id: string;
@@ -25,7 +25,7 @@ export default class Company {
   neighborhood: string;
 
   @Column()
-  company_size: string;
+  size: string;
 
   @Column()
   contact_email: string;

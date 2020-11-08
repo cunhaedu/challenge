@@ -7,11 +7,11 @@ import app from '../app';
 
 let connection: Connection;
 
-describe('Companies', () => {
+describe('Clients', () => {
   beforeAll(async () => {
     connection = await createConnection('test-connection');
 
-    await connection.query('DROP TABLE IF EXISTS companies');
+    await connection.query('DROP TABLE IF EXISTS clients');
     await connection.query('DROP TABLE IF EXISTS products');
     await connection.query('DROP TABLE IF EXISTS migrations');
 
@@ -19,7 +19,7 @@ describe('Companies', () => {
   });
 
   beforeEach(async () => {
-    await connection.query('DELETE FROM companies');
+    await connection.query('DELETE FROM clients');
     await connection.query('DELETE FROM products');
   });
 
@@ -30,13 +30,13 @@ describe('Companies', () => {
     await mainConnection.close();
   });
 
-  it('should be able to create a new company', async () => {
-    const response = await request(app).post('/companies').send({
+  it('should be able to create a new client', async () => {
+    const response = await request(app).post('/clients').send({
       name: 'Nick Furry',
       fantasy_name: 'S.H.I.L.D',
       cnpj: '86.009.491/0001-57',
       neighborhood: 'Manhattan',
-      company_size: 'Grande Porte',
+      size: 'Grande Porte',
       contact_email: 'furry.nick@starkindustries.com',
       email: 'shild.contat@starkindustries.com',
       cep: '10110',
@@ -54,7 +54,7 @@ describe('Companies', () => {
         fantasy_name: 'S.H.I.L.D',
         cnpj: '86.009.491/0001-57',
         neighborhood: 'Manhattan',
-        company_size: 'Grande Porte',
+        size: 'Grande Porte',
         contact_email: 'furry.nick@starkindustries.com',
         email: 'shild.contat@starkindustries.com',
         cep: '10110',
@@ -68,13 +68,13 @@ describe('Companies', () => {
     );
   });
 
-  it('should not be able to create a company with one e-mail thats already registered', async () => {
-    const company = await request(app).post('/companies').send({
+  it('should not be able to create a client with one e-mail thats already registered', async () => {
+    const client = await request(app).post('/clients').send({
       name: 'Nick Furry',
       fantasy_name: 'S.H.I.L.D',
       cnpj: '86.009.491/0001-57',
       neighborhood: 'Manhattan',
-      company_size: 'Grande Porte',
+      size: 'Grande Porte',
       contact_email: 'furry.nick@starkindustries.com',
       email: 'shild.contat@starkindustries.com',
       cep: '10110',
@@ -86,13 +86,13 @@ describe('Companies', () => {
       address: '890 Fifth Avenue',
     });
 
-    expect(company.body).toEqual(
+    expect(client.body).toEqual(
       expect.objectContaining({
         name: 'Nick Furry',
         fantasy_name: 'S.H.I.L.D',
         cnpj: '86.009.491/0001-57',
         neighborhood: 'Manhattan',
-        company_size: 'Grande Porte',
+        size: 'Grande Porte',
         contact_email: 'furry.nick@starkindustries.com',
         email: 'shild.contat@starkindustries.com',
         cep: '10110',
@@ -105,12 +105,12 @@ describe('Companies', () => {
       }),
     );
 
-    const response = await request(app).post('/companies').send({
+    const response = await request(app).post('/clients').send({
       name: 'Nick Furry',
       fantasy_name: 'S.H.I.L.D',
       cnpj: '86.009.491/0001-57',
       neighborhood: 'Manhattan',
-      company_size: 'Grande Porte',
+      size: 'Grande Porte',
       contact_email: 'furry.nick@starkindustries.com',
       email: 'shild.contat@starkindustries.com',
       cep: '10110',
@@ -125,13 +125,13 @@ describe('Companies', () => {
     expect(response.status).toBe(400);
   });
 
-  it('should delete a company by id', async () => {
-    const company = await request(app).post('/companies').send({
+  it('should delete a client by id', async () => {
+    const client = await request(app).post('/clients').send({
       name: 'Nick Furry',
       fantasy_name: 'S.H.I.L.D',
       cnpj: '86.009.491/0001-57',
       neighborhood: 'Manhattan',
-      company_size: 'Grande Porte',
+      size: 'Grande Porte',
       contact_email: 'furry.nick@starkindustries.com',
       email: 'shild.contat@starkindustries.com',
       cep: '10110',
@@ -143,9 +143,9 @@ describe('Companies', () => {
       address: '890 Fifth Avenue',
     });
 
-    const { id } = company.body;
+    const { id } = client.body;
 
-    const response = await request(app).delete(`/companies/${id}`);
+    const response = await request(app).delete(`/clients/${id}`);
 
     expect(response.status).toBe(200);
   });
