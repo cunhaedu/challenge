@@ -1,10 +1,10 @@
-export interface ICompany {
+export interface IClient {
   id?: string;
   name: string;
   fantasy_name: string;
   cnpj: string;
   neighborhood: string;
-  company_size: string;
+  size: string;
   contact_email: string;
   email: string;
   cep: string;

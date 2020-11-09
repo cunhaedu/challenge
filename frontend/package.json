@@ -21,6 +21,7 @@
     "@angular/router": "~10.2.0",
     "@nebular/eva-icons": "6.2.1",
     "@nebular/theme": "^6.2.1",
+    "cep-promise": "^4.0.2",
     "eva-icons": "^1.1.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

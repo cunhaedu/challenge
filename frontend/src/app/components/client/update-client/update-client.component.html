@@ -1,0 +1,171 @@
+<main>
+  <div id="page-update-client">
+    <form class="form" (ngSubmit)="handleUpdateClient()" >
+      <h1>Atualizar Cliente</h1>
+
+      <div class="form__field">
+        <label htmlFor="name">Nome do cliente (Contato) </label><br>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          [(ngModel)]="client.name"
+          required
+        >
+      </div>
+
+      <div class="form__field">
+        <label htmlFor="name">Nome Fantásia</label><br>
+        <input
+          type="text"
+          name="fantasy_name"
+          id="fantasy_name"
+          [(ngModel)]="client.fantasy_name"
+          required
+        >
+      </div>
+
+      <div class="form__field">
+        <label htmlFor="name">E-Mail (Contato)</label><br>
+        <input nbInput
+          type="email"
+          name="contact_email"
+          id="contact_email"
+          [(ngModel)]="client.contact_email"
+          required
+        >
+      </div>
+
+      <div class="form__field">
+        <label htmlFor="name">E-Mail</label><br>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          [(ngModel)]="client.email"
+          required
+        >
+      </div>
+
+      <div class="form__field">
+        <label htmlFor="name">Telefone/Ramal (Contato)</label><br>
+        <input
+          type="tel"
+          name="phone"
+          id="phone"
+          maxlength="10"
+          [(ngModel)]="client.contact_phone"
+          required
+        >
+      </div>
+
+      <div class="form__field">
+        <label htmlFor="name">Telefone (Comercial)</label><br>
+        <input
+          type="tel"
+          name="comercial_phone"
+          id="comercial_phone"
+          maxlength="10"
+          [(ngModel)]="client.commercial_phone"
+          required
+        >
+      </div>
+
+      <div class="form__field">
+        <label htmlFor="name">CNPJ</label><br>
+        <input
+          type="text"
+          name="cnpj"
+          id="cnpj"
+          mask="000.000.000-00||00.000.000/0000-00"
+          [(ngModel)]="client.cnpj"
+          required
+        >
+      </div>
+
+      <div class="form__field">
+        <label htmlFor="name">CEP</label><br>
+        <input
+          type="text"
+          name="cep"
+          id="cep"
+          [(ngModel)]="client.cep"
+          required
+        >
+      </div>
+
+      <div class="form__field">
+        <label htmlFor="name">Endereço</label><br>
+        <input
+          type="text"
+          name="address"
+          id="address"
+          [(ngModel)]="client.address"
+          required
+        >
+      </div>
+
+      <div class="form__field">
+        <label htmlFor="name">Bairro</label><br>
+        <input
+          type="text"
+          name="neighborhood"
+          id="neighborhood"
+          [(ngModel)]="client.neighborhood"
+          required
+        >
+      </div>
+
+      <div className="form__field--group">
+        <div class="form__field">
+          <label htmlFor="name">Cidade</label><br>
+          <input
+            type="text"
+            name="city"
+            id="city"
+            [(ngModel)]="client.city"
+            required
+          >
+        </div>
+
+        <div class="form__field">
+          <label htmlFor="name">Estado</label><br>
+          <input
+            type="text"
+            name="state"
+            id="state"
+            [(ngModel)]="client.state"
+            required
+          >
+        </div>
+      </div>
+
+      <div class="form__field">
+        <label htmlFor="name">Quantidade de funcionários</label><br>
+        <input
+          type="number"
+          name="number_of_employees"
+          id="number_of_employees"
+          [(ngModel)]="client.number_of_employees"
+          required
+        >
+      </div>
+
+      <div class="form__field">
+        <label htmlFor="uf">Porte da empresa</label>
+        <select
+          name="text"
+          id="size"
+          (change)="updateClientSize($event.target.value)"
+        >
+          <option value="Pequeno Porte">Pequeno porte</option>
+          <option value="Médio Porte">Médio porte</option>
+          <option value="Grande Porte">Grande porte</option>
+          
+        </select>
+      </div>
+
+      <button type="submit">Atualizar cliente</button>
+    </form>
+  </div>
+</main>

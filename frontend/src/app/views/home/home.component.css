@@ -2,7 +2,7 @@ h1 {
   text-align: center;
 }
 
-.company__btn {
+.create__client {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,7 +12,7 @@ h1 {
   margin: 50px auto;
 }
 
-.company__btn button.btn__add {
+.create__client button.create__client--btn {
   align-self: flex-end;
   display: flex;
   align-items: center;
@@ -32,11 +32,11 @@ h1 {
   transition: background-color 0.2s;
 }
 
-.company__btn button.btn__add:hover {
+.create__client button.create__client--btn:hover {
   background: #24328a;
 }
 
-.companies {
+.clients {
   margin-top: 30px;
   width: 100%;
 
@@ -46,7 +46,7 @@ h1 {
   padding: 16px;
 }
 
-.companies ul li {
+.clients ul li {
   list-style-type: none;
 
   display: grid;
@@ -59,42 +59,42 @@ h1 {
   margin: 5px auto;
 }
 
-.companies ul li:first-child {
+.clients ul li:first-child {
   font-weight: bold;
 }
 
-.companies ul li span {
+.clients ul li span {
   font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.companies ul li button,
-.companies ul li a {
+.clients ul li button,
+.clients ul li a {
   border: none;
   cursor: pointer;
   background: none;
 }
 
-.companies ul li button img,
-.companies ul li a img {
+.clients ul li button img,
+.clients ul li a img {
   width: 24px;
   height: 24px;
   opacity: 0.6;
 }
 
-.companies ul li button img:hover,
-.companies ul li a img:hover {
+.clients ul li button img:hover,
+.clients ul li a img:hover {
   opacity: 1;
 }
 
 @media (min-width: 600px) {
-  .company__btn button.btn__add {
+  .create__client button.create__client--btn {
     width: 250px;
   }
 
-  .companies ul li {
+  .clients ul li {
     grid-template-columns: 25% 15% 15% 15% 15% 5% 5% 5%;
   }
 }

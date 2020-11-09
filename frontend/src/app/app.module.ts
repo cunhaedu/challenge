@@ -15,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { UpdateProductComponent } from './components/product/update-product/update-product.component';
+import { CreateClientComponent } from './components/client/create-client/create-client.component';
+import { UpdateClientComponent } from './components/client/update-client/update-client.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { UpdateProductComponent } from './components/product/update-product/upda
     HomeComponent,
     ProductsComponent,
     CreateProductComponent,
-    UpdateProductComponent
+    UpdateProductComponent,
+    CreateClientComponent,
+    UpdateClientComponent
   ],
   imports: [
     BrowserModule,

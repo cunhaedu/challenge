@@ -1,13 +1,13 @@
 <main>
   <h1>Gerenciar clientes</h1>
 
-  <div class="company__btn">
-    <button (click)="handleNavigateToCreateCompany()" class="btn__add">
+  <div class="create__client">
+    <button (click)="handleNavigateToCreateClient()" class="create__client--btn">
       <img src="../../../assets/plus.png" alt="adicionar">
       Cadastrar novo cliente
     </button>
 
-    <div class="companies">
+    <div class="clients">
         <ul>
           <li>
             <span>Nome do cliente</span>
@@ -16,19 +16,19 @@
             <span>QTD de funcionários</span>
             <span>Telefone(Com)</span>
           </li>
-          <li *ngFor="let company of companies">
-            <span>{{ company.fantasy_name }}</span>
-            <span>{{ company.cnpj }}</span>
-            <span>{{ company.company_size }}</span>
-            <span>{{ company.number_of_employees }}</span>
-            <span>{{ company.commercial_phone }}</span>
-            <a routerLink="/company/update/{{ company.id }}">
+          <li *ngFor="let client of clients">
+            <span>{{ client.fantasy_name }}</span>
+            <span>{{ client.cnpj }}</span>
+            <span>{{ client.size }}</span>
+            <span>{{ client.number_of_employees }}</span>
+            <span>{{ client.commercial_phone }}</span>
+            <a routerLink="/clients/update/{{ client.id }}">
               <img src="../../../assets/budget.png" alt="editIcon">
             </a>
-            <a routerLink="/company/update/{{ company.id }}">
+            <a routerLink="/clients/update/{{ client.id }}">
               <img src="../../../assets/edit.png" alt="editIcon">
             </a>
-            <button (click)="handleDeleteCompany(company)">
+            <button (click)="handleDeleteClient(client)">
               <img src="../../../assets/delete.png" alt="deleteIcon">
             </button>
           </li>

@@ -5,6 +5,8 @@ import { HomeComponent } from './views/home/home.component';
 import { ProductsComponent } from './views/products/products.component';
 import { CreateProductComponent } from './components/product/create-product/create-product.component';
 import { UpdateProductComponent } from './components/product/update-product/update-product.component';
+import { CreateClientComponent } from './components/client/create-client/create-client.component';
+import { UpdateClientComponent } from './components/client/update-client/update-client.component';
 
 const routes: Routes = [
   {
@@ -22,6 +24,14 @@ const routes: Routes = [
   {
     path: 'products/update/:id',
     component: UpdateProductComponent
+  },
+  {
+    path: 'clients/create',
+    component: CreateClientComponent
+  },
+  {
+    path: 'clients/update/:id',
+    component: UpdateClientComponent
   }
 ];
 
