@@ -4,7 +4,9 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   PrimaryGeneratedColumn,
+  OneToMany,
 } from 'typeorm';
+import Budget from './Budget';
 
 @Entity('clients')
 export default class Client {
@@ -42,8 +44,8 @@ export default class Client {
   @Column()
   state: string;
 
-  @Column()
-  number_of_employees: string;
+  @Column('integer')
+  number_of_employees: number;
 
   @Column()
   contact_phone: string;
@@ -53,6 +55,11 @@ export default class Client {
 
   @Column()
   address: string;
+
+  @OneToMany(() => Budget, (budget) => budget.client, {
+    cascade: ['insert', 'update'],
+  })
+  budgets: Budget[];
 
   @CreateDateColumn()
   created_at: Date;

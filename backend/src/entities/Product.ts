@@ -4,7 +4,9 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   PrimaryGeneratedColumn,
+  OneToMany,
 } from 'typeorm';
+import BudgetProduct from './BudgetProducts';
 
 @Entity('products')
 export default class Product {
@@ -16,13 +18,18 @@ export default class Product {
   name: string;
 
   @Column('decimal', { precision: 11, scale: 2 })
-  little_size_base: string;
+  little_size_base: number;
 
   @Column('decimal', { precision: 11, scale: 2 })
-  middle_size_base: string;
+  middle_size_base: number;
 
   @Column('decimal', { precision: 11, scale: 2 })
-  large_size_base: string;
+  large_size_base: number;
+
+  @OneToMany(() => BudgetProduct, (budgetProduct) => budgetProduct.product, {
+    cascade: ['insert', 'update'],
+  })
+  budgetProducts: BudgetProduct[];
 
   @CreateDateColumn({ type: 'timestamp' })
   created_at: Date;
