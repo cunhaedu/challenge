@@ -11,6 +11,8 @@ describe('Clients', () => {
   beforeAll(async () => {
     connection = await createConnection('test-connection');
 
+    await connection.query('DROP TABLE IF EXISTS budgets_products');
+    await connection.query('DROP TABLE IF EXISTS budgets');
     await connection.query('DROP TABLE IF EXISTS clients');
     await connection.query('DROP TABLE IF EXISTS products');
     await connection.query('DROP TABLE IF EXISTS migrations');
@@ -21,6 +23,8 @@ describe('Clients', () => {
   beforeEach(async () => {
     await connection.query('DELETE FROM clients');
     await connection.query('DELETE FROM products');
+    await connection.query('DELETE FROM budgets');
+    await connection.query('DELETE FROM budgets_products');
   });
 
   afterAll(async () => {
