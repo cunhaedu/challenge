@@ -1,0 +1,54 @@
+@hostname = localhost
+@port = 3333
+@host = {{hostname}}:{{port}}
+
+###
+
+# List
+GET http://{{host}}/clients
+
+### show product information by ID
+GET http://{{host}}/clients/{id}
+
+### Create
+POST https://{{host}}/clients
+
+{
+  "name": "Nick Furry",
+	"fantasy_name": "S.H.I.L.D",
+	"cnpj": "86.009.491/0001-57",
+	"neighborhood": "Manhattan",
+	"size": "Grande Porte",
+	"contact_email": "furry.nick02@starkindustries.com",
+	"email": "shild.contat@starkindustries.com",
+	"cep": "10110",
+	"city": "New York",
+	"state": "New York",
+	"number_of_employees": 712,
+	"contact_phone": "1938348520",
+	"commercial_phone": "1938348520",
+	"address": "890 Fifth Avenue"
+}
+
+### Update
+PUT http://{{host}}/clients/{id}
+
+{
+  "name": "Nick Furry",
+	"fantasy_name": "S.H.I.L.D",
+	"cnpj": "86.009.491/0001-57",
+	"neighborhood": "Manhattan",
+	"size": "Grande Porte",
+	"contact_email": "furry.nick02@starkindustries.com",
+	"email": "shild.contat@starkindustries.com",
+	"cep": "10110",
+	"city": "New York",
+	"state": "New York",
+	"number_of_employees": 712,
+	"contact_phone": "1938348520",
+	"commercial_phone": "1938348520",
+	"address": "890 Fifth Avenue"
+}
+
+### Delete
+DELETE http://{{host}}/clients/{id}

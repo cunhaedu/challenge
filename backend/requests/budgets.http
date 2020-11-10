@@ -1,0 +1,25 @@
+@hostname = localhost
+@port = 3333
+@host = {{hostname}}:{{port}}
+
+###
+
+### Create
+POST https://{{host}}/budgets
+
+{
+  "sale_type": "Parceiro",
+	"client_id": "client_id",
+  "users_quantity": 50,
+  "taxes": 11,
+  "commission": 30,
+  "amount": 289000000.00,
+	"budget_products": [
+		{
+			"product_id": "product_id",
+			"tax_free_amount": 150000000.00,
+			"tax_amount": 165000000.00,
+			"value_for_partners": 49500000.00
+		}
+	]
+}

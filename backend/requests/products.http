@@ -1,0 +1,34 @@
+@hostname = localhost
+@port = 3333
+@host = {{hostname}}:{{port}}
+
+###
+
+# List
+GET http://{{host}}/products
+
+### show product information by ID
+GET http://{{host}}/products/{id}
+
+### Create
+POST https://{{host}}/products
+
+{
+  "name": "McDonnell Douglas F/A-18 Hornet",
+	"little_size_base": 57000000.00,
+	"middle_size_base": 67000000.00,
+	"large_size_base": 74000000.00
+}
+
+### Update
+PUT http://{{host}}/products/{id}
+
+{
+  "name": "McDonnell Douglas F/A-18 Hornet",
+	"little_size_base": 57000000.00,
+	"middle_size_base": 67000000.00,
+	"large_size_base": 74000000.00
+}
+
+### Delete
+DELETE http://{{host}}/products/{id}
