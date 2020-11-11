@@ -32,7 +32,7 @@ export default class Budget {
   @Column('integer')
   commission: number;
 
-  @Column('decimal', { precision: 11, scale: 2 })
+  @Column('decimal', { precision: 14, scale: 2 })
   amount: number;
 
   @ManyToOne(() => Client, (client) => client.id)

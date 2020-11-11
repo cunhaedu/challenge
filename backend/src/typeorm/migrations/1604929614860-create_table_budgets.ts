@@ -41,7 +41,7 @@ export class createTableBudgets1604929614860 implements MigrationInterface {
           name: 'amount',
           type: 'decimal',
           scale: 2,
-          precision: 11,
+          precision: 14,
           isNullable: false,
         },
         {
