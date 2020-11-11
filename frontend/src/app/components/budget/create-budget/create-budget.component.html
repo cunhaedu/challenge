@@ -1,0 +1,87 @@
+<main>
+  <h1>Criação de Orçamento</h1>
+  <form class="form" (ngSubmit)="handleNavigateToBudgetConfirm()" >
+    <div>
+      <p>Tipo de venda</p>
+      <div class="radio">
+        <input
+          type="radio"
+          id="Própria"
+          name="Própria"
+          value="Própria"
+          [(ngModel)]="budget.sale_type"
+          (change)="updateBudgetSaleType($event.target.value)"
+        >
+        <label for="Propria" class="right">Própria</label>
+        <input
+          type="radio"
+          id="Parceiro"
+          name="Parceiro"
+          value="Parceiro"
+          [(ngModel)]="budget.sale_type"
+          (change)="updateBudgetSaleType($event.target.value)"
+        >
+        <label for="Parceiro">Parceiro</label>
+      </div>
+    </div>
+
+    <div class="form__field">
+      <label htmlFor="users_quantity">Usuários</label>
+      <input
+        type="number"
+        name="users_quantity"
+        id="users_quantity"
+        [(ngModel)]="budget.users_quantity"
+      />
+    </div>
+
+    <div class="form__field">
+      <label htmlFor="taxes">Imposto %</label>
+      <input
+        type="number"
+        name="taxes"
+        id="taxes"
+        [(ngModel)]="budget.taxes"
+        (change)="updateProductsTaxes($event.target.value)"
+      >
+    </div>
+
+    <div class="form__field">
+      <label htmlFor="commission">Comissão %</label>
+      <input
+        type="number"
+        name="commission"
+        id="commission"
+        [(ngModel)]="budget.commission"
+        (change)="updateProductsCommissions($event.target.value)"
+      >
+    </div>
+    <button type="submit">Próximo</button>
+  </form>
+
+  <div class="products">
+    <ul>
+      <li>
+        <span>Produto</span>
+        <span>Valor</span>
+        <span>Preço de Revenda</span>
+        <span>Preço Total</span>
+        <span>Selecionar Produto</span>
+      </li>
+      <li *ngFor="let product of products">
+        <span>{{ product.name }}</span>
+        <span>{{ product.value | currency }}</span>
+        <span>{{ product.commission | currency }}</span>
+        <span>{{ product.tax_amount | currency }}</span>
+        <span>
+          <input
+            type="checkbox"
+            id="{{ product.id }}"
+            name="{{ product.name }}"
+            (click)="addSelectedProduct(product, $event.target.checked, i)"
+          >
+        </span>
+      </li>
+    </ul>
+  </div>
+</main>

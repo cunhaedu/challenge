@@ -17,6 +17,7 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { UpdateProductComponent } from './components/product/update-product/update-product.component';
 import { CreateClientComponent } from './components/client/create-client/create-client.component';
 import { UpdateClientComponent } from './components/client/update-client/update-client.component';
+import { CreateBudgetComponent } from './components/budget/create-budget/create-budget.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { UpdateClientComponent } from './components/client/update-client/update-
     CreateProductComponent,
     UpdateProductComponent,
     CreateClientComponent,
-    UpdateClientComponent
+    UpdateClientComponent,
+    CreateBudgetComponent,
   ],
   imports: [
     BrowserModule,

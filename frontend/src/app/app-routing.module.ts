@@ -7,6 +7,7 @@ import { CreateProductComponent } from './components/product/create-product/crea
 import { UpdateProductComponent } from './components/product/update-product/update-product.component';
 import { CreateClientComponent } from './components/client/create-client/create-client.component';
 import { UpdateClientComponent } from './components/client/update-client/update-client.component';
+import { CreateBudgetComponent } from './components/budget/create-budget/create-budget.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'clients/update/:id',
     component: UpdateClientComponent
+  },
+  {
+    path: 'budgets/create/:id',
+    component: CreateBudgetComponent
   }
 ];
 
