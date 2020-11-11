@@ -1,27 +1,41 @@
-# Frontend
+# Welcome
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+# :pushpin: Table of Contents
 
-## Development server
+* [Features](#rocket-features)
+* [Installation](#construction_worker-installation)
+* [Getting Started](#runner-getting-started)
+* [FAQ](#postbox-faq)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# :rocket: Features
 
-## Code scaffolding
+* clients CRUD
+* Products CRUD
+* Budget creation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# :construction_worker: Installation
 
-## Build
+**First of all, you need to install [Node.js](https://nodejs.org/en/download/) and [Yarn](https://yarnpkg.com/)**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+**Install dependencies**
+```
+yarn install
+```
 
-## Running unit tests
+**Setup the api:**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+The interface needs to interact with the server to get all the data and execute mutations.
 
-## Running end-to-end tests
+Make sure to go to the backend folder and follow the instructions in order to get it running in your machine.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+# :runner: Getting Started
+Run the following command in order to start the application in a development environment:
+```
+yarn start
+```
 
-## Further help
+## :postbox: Faq
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+**Question:** What are the technologies used in this project?
+
+**Answer:** The technologies used in this project are [Angular](https://angular.io/) + [Nebular](https://akveo.github.io/nebular/) to handle some CSS components.
