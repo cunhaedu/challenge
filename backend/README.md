@@ -88,7 +88,6 @@ Check the following status codes in this API:
 | Status Code | Description |
 | :--- | :--- |
 | 200 | `OK` |
-| 401 | `UNAUTHORIZED` |
 | 400 | `BAD REQUEST` |
 | 404 | `NOT FOUND` |
 | 500 | `INTERNAL SERVER ERROR` |
