@@ -70,6 +70,7 @@ export class CreateBudgetComponent implements OnInit {
     if (event) {
       this.budgetProducts.push({
         product_id: product.id,
+        product_name: product.name,
         tax_free_amount: product.value,
         tax_amount: null,
         value_for_partners: null

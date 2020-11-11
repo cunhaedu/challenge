@@ -9,7 +9,12 @@ export interface IBudget {
 
 export interface IBudgetProduct {
   product_id: string;
+  product_name?: string;
   tax_free_amount: number;
   tax_amount: number;
   value_for_partners: number;
+}
+
+export interface IBudgetData extends IBudget{
+  budget_products: IBudgetProduct[];
 }

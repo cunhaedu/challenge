@@ -84,20 +84,16 @@ export default class BudgetsController {
     const budget = budgetRepository.create(budgetData);
     const budgetProductData = budget_products.map((b) => budgetProductsRepository.create(b));
 
-    try {
-      await getConnection().transaction(async () => {
-        const budget_id = await budgetRepository.save(budget);
+    await getConnection().transaction(async () => {
+      const budget_id = await budgetRepository.save(budget);
 
-        budgetProductData.forEach(async (budgetProductElement) => {
-          await budgetProductsRepository.save({
-            budget_id,
-            ...budgetProductElement,
-          });
+      budgetProductData.forEach(async (budgetProductElement) => {
+        await budgetProductsRepository.save({
+          budget_id,
+          ...budgetProductElement,
         });
       });
-    } catch {
-      return res.status(400).json({ message: 'Cannot save budget in database!' });
-    }
+    });
 
     await mailProvider.sendMail({
       to: {
