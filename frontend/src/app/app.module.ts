@@ -18,6 +18,7 @@ import { UpdateProductComponent } from './components/product/update-product/upda
 import { CreateClientComponent } from './components/client/create-client/create-client.component';
 import { UpdateClientComponent } from './components/client/update-client/update-client.component';
 import { CreateBudgetComponent } from './components/budget/create-budget/create-budget.component';
+import { CreateBudgetConfirmComponent } from './components/budget/create-budget-confirm/create-budget-confirm.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { CreateBudgetComponent } from './components/budget/create-budget/create-
     CreateClientComponent,
     UpdateClientComponent,
     CreateBudgetComponent,
+    CreateBudgetConfirmComponent,
   ],
   imports: [
     BrowserModule,

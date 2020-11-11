@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IClient } from '../../client/Client.model';
 import { ClientService } from '../../client/Client.service';
 import { IProduct } from '../../product/Product.model';
@@ -28,7 +28,8 @@ export class CreateBudgetComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private clientService: ClientService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -143,6 +144,14 @@ export class CreateBudgetComponent implements OnInit {
       budget_products: this.budgetProducts
     };
 
+    const oldData = JSON.parse(localStorage.getItem('budget'));
+
+    if (oldData) {
+      localStorage.removeItem('budget');
+    }
+
     localStorage.setItem('budget', JSON.stringify(budgetData));
+
+    this.router.navigate(['/budgets/confirm']);
   }
 }
